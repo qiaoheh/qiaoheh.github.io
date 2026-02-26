@@ -18,23 +18,105 @@
         <div class="writer-card" id="pelevin">
             <h2>Виктор Пелевин</h2>
             <div class="formula">
-                <span class="component">Симулякры</span> + 
-                <span class="component">Трещины в четвёртой стене</span> + 
-                <span class="component">Буддизм</span> +
-                <span class="component">Цинизм</span>
+                <span class="component" onclick="toggleDesc('pelevin-1')">Симулякры</span> + 
+                <span class="component" onclick="toggleDesc('pelevin-2')">Трещины в четвёртой стене</span> + 
+                <span class="component" onclick="toggleDesc('pelevin-3')">Буддизм</span> +
+                <span class="component" onclick="toggleDesc('pelevin-4')">Цинизм</span>
             </div>
-            <button class="toggle-btn" onclick="toggleDesc('pelevin-desc')">Что это значит?</button>
-            <div class="elements" id="pelevin-desc" style="display: none;">
+            <div class="elements">
                 <ul>
-                    <li><span class="element">Симулякры</span> — реальность как плохая имитация того, чего никогда не существовало</li>
-                    <li><span class="element">Трещины в четвёртой стене</span> — книга спорит с вашим мнением и иногда успешно переубеждает</li>
-                    <li><span class="element">Буддизм</span> — путь к Нирване у вас на диване</li>
-                    <li><span class="element">Цинизм</span> — новый жанр в цинизме, морализаторско-воспитательный</li>
+                    <li id="pelevin-1" style="display: none;">реальность как плохая имитация того, чего никогда не существовало</li>
+                    <li id="pelevin-2" style="display: none;">книга спорит с вашим мнением и иногда успешно переубеждает</li>
+                    <li id="pelevin-3" style="display: none;">путь к Нирване у вас на диване</li>
+                    <li id="pelevin-4" style="display: none;">новый жанр в цинизме, морализаторско-воспитательный</li>
                 </ul>
             </div>
             <div class="existential-meter">
                 <span class="meter-label">Уровень отчуждения:</span>
                 <div class="meter-bar"><div style="width: 88%"></div></div>
+            </div>
+        </div>
+
+        <div class="writer-card" id="sorokin">
+            <h2>Владимир Сорокин</h2>
+            <div class="formula">
+                <span class="component" onclick="toggleDesc('sorokin-1')">Провокация</span> + 
+                <span class="component" onclick="toggleDesc('sorokin-2')">Осквернение эстетических чувств</span> + 
+                <span class="component" onclick="toggleDesc('sorokin-3')">Какашки</span> +
+                <span class="component" onclick="toggleDesc('sorokin-4')">Симуляция классики</span>
+            </div>
+            <div class="elements">
+                <ul>
+                    <li id="sorokin-1" style="display: none;">выпинывание читателя из зоны комфорта, даже если он её в глаза не видел</li>
+                    <li id="sorokin-2" style="display: none;">глаза лопаются от некоторых букв автора</li>
+                    <li id="sorokin-3" style="display: none;">физические, ментальные и сакральные</li>
+                    <li id="sorokin-4" style="display: none;">возмутительная, и вы ещё скажете спасибо</li>
+                </ul>
+            </div>
+            <div class="existential-meter">
+                <span class="meter-label">Уровень абсурда:</span>
+                <div class="meter-bar"><div style="width: 96%"></div></div>
+            </div>
+        </div>
+
+        <div class="writer-card" id="ulitskaya">
+            <h2>Людмила Улицкая</h2>
+            <div class="formula">
+                <span class="component" onclick="toggleDesc('ulitskaya-1')">Тяжёлое интеллигентное еврейское детство</span> + 
+                <span class="component" onclick="toggleDesc('ulitskaya-2')">Тяжёлая интеллигентная еврейская зрелость</span> + 
+                <span class="component" onclick="toggleDesc('ulitskaya-3')">Солнечные пылинки и тоска по позднесоветскому уюту</span> +
+                <span class="component" onclick="toggleDesc('ulitskaya-4')">Терапевтический реализм</span>
+            </div>
+            <div class="elements">
+                <ul>
+                    <li id="ulitskaya-1" style="display: none;">иногда даже хочется стать евреем, чтобы было от чего отталкиваться</li>
+                    <li id="ulitskaya-2" style="display: none;">шутка, глубокая общечеловеческая проза в достоверных исторических декорациях</li>
+                    <li id="ulitskaya-3" style="display: none;">лежать, смотреть, читать про чужие жизни и переживать</li>
+                    <li id="ulitskaya-4" style="display: none;">персонажи не гибнут, они мучаются достойно и с пользой для читателя</li>
+                </ul>
+            </div>
+            <div class="existential-meter">
+                <span class="meter-label">Уровень принятия:</span>
+                <div class="meter-bar"><div style="width: 90%"></div></div>
+            </div>
+        </div>
+
+        <div class="total-formula">
+            <h2>Общая формула русской прозы</h2>
+            <div class="final-equation">
+                (Травма × Ирония) ÷ Надежда = ∞
+            </div>
+            <p class="formula-note">Где ∞ — это читатель, который всё равно читает дальше</p>
+        </div>
+
+        <section class="suggest">
+            <h2>Предложить писателя</h2>
+            <p>Какой экзистенциальный компонент мы упустили? Пиши на <a href="mailto:zanaevab@gmail.com">почту</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Qiaohe © 2025</p>
+    </footer>
+
+    <script>
+        function toggleDesc(id) {
+            const desc = document.getElementById(id);
+            const allDescs = document.querySelectorAll('.elements li');
+            
+            allDescs.forEach(d => {
+                if (d.id !== id) d.style.display = 'none';
+            });
+            
+            if (desc.style.display === 'none') {
+                desc.style.display = 'block';
+            } else {
+                desc.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>                <div class="meter-bar"><div style="width: 88%"></div></div>
             </div>
         </div>
 
