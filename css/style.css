@@ -1,654 +1,119 @@
-/* === БАЗА === */
-* {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-}
-
-body {
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-   line-height: 1.6;
-   color: #1a1a1a;
-   max-width: 720px;
-   margin: 0 auto;
-   padding: 20px;
-   background: #f5f5f5;
-}
-
-/* === НАВИГАЦИЯ === */
-nav {
-   margin-bottom: 40px;
-   padding-bottom: 15px;
-   border-bottom: 1px solid #000;
-}
-
-nav a {
-   color: #000;
-   text-decoration: none;
-   margin-right: 25px;
-   font-weight: 500;
-}
-
-nav a:hover {
-   text-decoration: underline;
-}
-
-/* === ТИПОГРАФИКА === */
-h1 {
-   font-size: 2.2rem;
-   margin-bottom: 10px;
-   font-weight: 700;
-   letter-spacing: -0.5px;
-}
-
-h2 {
-   font-size: 1.4rem;
-   margin: 0 0 15px;
-   font-weight: 600;
-}
-
-h3 {
-   font-size: 1.1rem;
-   margin-bottom: 5px;
-}
-
-p {
-   margin-bottom: 15px;
-   color: #333;
-}
-
-.subtitle {
-   color: #666;
-   font-size: 1.1rem;
-   margin-bottom: 50px;
-   font-style: italic;
-}
-
-/* === ГЛАВНАЯ === */
-.grid {
-   display: grid;
-   grid-template-columns: 1fr;
-   gap: 20px;
-   margin-top: 30px;
-}
-
-.card {
-   border: 1px solid #000;
-   padding: 25px;
-   text-decoration: none;
-   color: inherit;
-   background: #fff;
-   transition: all 0.2s;
-}
-
-.card:hover {
-   background: #000;
-   color: #fff;
-}
-
-.card.disabled {
-   opacity: 0.3;
-   pointer-events: none;
-}
-
-/* === ЭКЗИСТЕНЦИАЛЬНАЯ ИНФОГРАФИКА === */
-.infographic {
-   max-width: 650px;
-}
-
-.writer-card {
-   background: #fff;
-   border: 1px solid #000;
-   padding: 30px;
-   margin: 30px 0;
-   position: relative;
-   transition: all 0.3s;
-}
-
-.writer-card::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 4px;
-   height: 100%;
-   background: #000;
-}
-
-.writer-card:hover {
-   transform: translate(-2px, -2px);
-   box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
-}
-
-#pelevin:hover {
-   border-color: #666;
-   box-shadow: 4px 4px 0 #666;
-}
-
-#pelevin::before {
-   background: #666;
-}
-
-#sorokin:hover {
-   border-color: #c00;
-   box-shadow: 4px 4px 0 #c00;
-}
-
-#sorokin::before {
-   background: #c00;
-}
-
-#ulitskaya:hover {
-   border-color: #d4a574;
-   box-shadow: 4px 4px 0 #d4a574;
-}
-
-#ulitskaya::before {
-   background: #d4a574;
-}
-
-.formula {
-   font-size: 1.05rem;
-   line-height: 2;
-   margin: 20px 0;
-   padding: 20px;
-   background: #fafafa;
-   border-left: 3px solid #333;
-}
-
-.component {
-   display: inline-block;
-   padding: 4px 12px;
-   margin: 2px;
-   border: 1px solid #000;
-   background: #fff;
-   font-weight: 500;
-   white-space: nowrap;
-}
-
-.elements {
-   list-style: none;
-   margin: 20px 0;
-}
-
-.elements li {
-   margin: 12px 0;
-   padding-left: 25px;
-   position: relative;
-   color: #444;
-}
-
-.elements li::before {
-   content: "—";
-   position: absolute;
-   left: 0;
-   color: #999;
-}
-
-.element {
-   font-weight: 600;
-   color: #000;
-}
-
-/* === ШКАЛА === */
-.existential-meter {
-   margin-top: 25px;
-   padding-top: 20px;
-   border-top: 1px dashed #ccc;
-}
-
-.meter-label {
-   display: block;
-   font-size: 0.85rem;
-   color: #666;
-   margin-bottom: 8px;
-   text-transform: uppercase;
-   letter-spacing: 0.5px;
-}
-
-.meter-bar {
-   height: 6px;
-   background: #eee;
-   position: relative;
-}
-
-.meter-bar div {
-   height: 100%;
-   background: #000;
-   transition: width 1s ease-out;
-}
-
-#pelevin .meter-bar div {
-   background: #666;
-}
-
-#sorokin .meter-bar div {
-   background: #c00;
-}
-
-#ulitskaya .meter-bar div {
-   background: #d4a574;
-}
-
-/* === ИТОГОВАЯ ФОРМУЛА === */
-.total-formula {
-   margin: 60px 0;
-   padding: 40px 30px;
-   background: #000;
-   color: #fff;
-   text-align: center;
-}
-
-.total-formula h2 {
-   margin-bottom: 25px;
-   font-weight: 400;
-   letter-spacing: 1px;
-}
-
-.final-equation {
-   font-size: 1.8rem;
-   font-family: 'Courier New', monospace;
-   margin: 20px 0;
-   letter-spacing: -1px;
-}
-
-.formula-note {
-   color: #999;
-   font-size: 0.95rem;
-   font-style: italic;
-   margin-top: 20px;
-}
-
-/* === ПРЕДЛОЖЕНИЯ === */
-.suggest {
-   margin-top: 40px;
-   padding: 30px;
-   border: 1px solid #000;
-   background: #fff;
-}
-
-.suggest h2 {
-   margin-top: 0;
-}
-
-.suggest a {
-   color: #000;
-   text-decoration: underline;
-   text-underline-offset: 3px;
-}
-
-/* === КОНТАКТЫ === */
-.contacts ul {
-   list-style: none;
-   margin: 20px 0;
-}
-
-.contacts li {
-   margin: 10px 0;
-}
-
-.contacts a {
-   color: #000;
-}
-
-.note {
-   margin-top: 40px;
-   color: #666;
-   font-style: italic;
-}
-
-/* === ФУТЕР === */
-footer {
-   margin-top: 80px;
-   padding-top: 20px;
-   border-top: 1px solid #ddd;
-   text-align: center;
-   color: #999;
-   font-size: 0.9rem;
-}
-
-/* === МОБИЛЬНАЯ === */
-@media (max-width: 600px) {
-   h1 { font-size: 1.7rem; }
-   .formula { font-size: 0.95rem; padding: 15px; }
-   .writer-card { padding: 20px; }
-   .final-equation { font-size: 1.3rem; }
-   .component { display: block; margin: 5px 0; }
-}
-
-/* === БАЗА === */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: #1a1a1a;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #f5f5f5;
-}
-
-/* === НАВИГАЦИЯ === */
-nav {
-    margin-bottom: 40px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #000;
-}
-
-nav a {
-    color: #000;
-    text-decoration: none;
-    margin-right: 25px;
-    font-weight: 500;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* === ТИПОГРАФИКА === */
-h1 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-h2 {
-    font-size: 1.4rem;
-    margin: 0 0 15px;
-    font-weight: 600;
-}
-
-p {
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.subtitle {
-    color: #666;
-    font-size: 1.1rem;
-    margin-bottom: 50px;
-    font-style: italic;
-}
-
-/* === ГЛАВНАЯ === */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.card {
-    border: 1px solid #000;
-    padding: 25px;
-    text-decoration: none;
-    color: inherit;
-    background: #fff;
-    transition: all 0.2s;
-}
-
-.card:hover {
-    background: #000;
-    color: #fff;
-}
-
-.card.disabled {
-    opacity: 0.3;
-    pointer-events: none;
-}
-
-/* === ЭКЗИСТЕНЦИАЛЬНАЯ ИНФОГРАФИКА === */
-.infographic {
-    max-width: 650px;
-}
-
-.writer-card {
-    background: #fff;
-    border: 1px solid #000;
-    padding: 30px;
-    margin: 30px 0;
-    position: relative;
-    transition: all 0.3s;
-}
-
-.writer-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: #000;
-}
-
-.writer-card:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
-}
-
-#pelevin:hover {
-    border-color: #666;
-    box-shadow: 4px 4px 0 #666;
-}
-
-#pelevin::before {
-    background: #666;
-}
-
-#sorokin:hover {
-    border-color: #c00;
-    box-shadow: 4px 4px 0 #c00;
-}
-
-#sorokin::before {
-    background: #c00;
-}
-
-#ulitskaya:hover {
-    border-color: #d4a574;
-    box-shadow: 4px 4px 0 #d4a574;
-}
-
-#ulitskaya::before {
-    background: #d4a574;
-}
-
-/* === ФОРМУЛА И КОМПОНЕНТЫ === */
-.formula {
-    font-size: 1.05rem;
-    line-height: 2;
-    margin: 20px 0;
-    padding: 20px;
-    background: #fafafa;
-    border-left: 3px solid #333;
-}
-
-.component {
-    display: inline-block;
-    padding: 4px 12px;
-    margin: 2px;
-    border: 1px solid #000;
-    background: #fff;
-    font-weight: 500;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.component:hover {
-    background: #000;
-    color: #fff;
-}
-
-#pelevin .component {
-    border-color: #666;
-    color: #666;
-}
-
-#pelevin .component:hover {
-    background: #666;
-    color: #fff;
-}
-
-#sorokin .component {
-    border-color: #c00;
-    color: #c00;
-}
-
-#sorokin .component:hover {
-    background: #c00;
-    color: #fff;
-}
-
-#ulitskaya .component {
-    border-color: #d4a574;
-    color: #d4a574;
-}
-
-#ulitskaya .component:hover {
-    background: #d4a574;
-    color: #fff;
-}
-
-/* === ОПИСАНИЯ === */
-.elements {
-    margin-top: 10px;
-}
-
-.elements ul {
-    list-style: none;
-}
-
-.elements li {
-    margin: 10px 0;
-    padding: 15px 20px;
-    background: #f0f0f0;
-    border-left: 3px solid #999;
-    color: #444;
-    display: none;
-    animation: fadeIn 0.3s ease;
-}
-
-.elements li::before {
-    content: "→ ";
-    color: #666;
-    font-weight: bold;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* === ШКАЛА === */
-.existential-meter {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px dashed #ccc;
-}
-
-.meter-label {
-    display: block;
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.meter-bar {
-    height: 6px;
-    background: #eee;
-    position: relative;
-}
-
-.meter-bar div {
-    height: 100%;
-    background: #000;
-    transition: width 1s ease-out;
-}
-
-#pelevin .meter-bar div {
-    background: #666;
-}
-
-#sorokin .meter-bar div {
-    background: #c00;
-}
-
-#ulitskaya .meter-bar div {
-    background: #d4a574;
-}
-
-/* === ИТОГОВАЯ ФОРМУЛА === */
-.total-formula {
-    margin: 60px 0;
-    padding: 40px 30px;
-    background: #000;
-    color: #fff;
-    text-align: center;
-}
-
-.total-formula h2 {
-    margin-bottom: 25px;
-    font-weight: 400;
-    letter-spacing: 1px;
-}
-
-.final-equation {
-    font-size: 1.8rem;
-    font-family: 'Courier New', monospace;
-    margin: 20px 0;
-    letter-spacing: -1px;
-}
-
-.formula-note {
-    color: #999;
-    font-size: 0.95rem;
-    font-style: italic;
-    margin-top: 20px;
-}
-
-/* === ПРЕДЛОЖЕНИЯ === */
-.suggest {
-    margin-top: 40px;
-    padding: 30px;
-    border: 1px solid #000;
-    background: #fff;
-}
-
-.suggest h2 {
-    margin-top: 0;
-}
-
-.suggest a {
-    color: #000;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-/* === ФУТЕР === */
-footer {
-    margin-top: 80px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
-    text-align: center;
-    color: #999;
-    font-size: 0.9rem;
-}
-
-/* === МОБИЛЬНАЯ === */
-@media (max-width: 600px) {
-    h1 { font-size: 1.7rem; }
-    .formula { font-size: 0.95rem; padding: 15px; }
-    .writer-card { padding: 20px; }
-    .final-equation { font-size: 1.3rem; }
-    .component { display: block; margin: 5px 0; text-align: center; }
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Состав писателей | Экзистенциальная инфографика</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">← Главная</a>
+    </nav>
+
+    <main class="infographic">
+        <h1>Состав писателей</h1>
+        <p class="subtitle">Экзистенциальная формула русской прозы</p>
+        
+        <div class="writer-card" id="pelevin">
+            <h2>Виктор Пелевин</h2>
+            <div class="formula">
+                <span class="component" onclick="toggleDesc('pelevin-1')">Симулякры</span> + 
+                <span class="component" onclick="toggleDesc('pelevin-2')">Трещины в четвёртой стене</span> + 
+                <span class="component" onclick="toggleDesc('pelevin-3')">Буддизм</span> +
+                <span class="component" onclick="toggleDesc('pelevin-4')">Цинизм</span>
+            </div>
+            <div class="elements">
+                <ul>
+                    <li id="pelevin-1" style="display: none;">реальность как плохая имитация того, чего никогда не существовало</li>
+                    <li id="pelevin-2" style="display: none;">книга спорит с вашим мнением и иногда успешно переубеждает</li>
+                    <li id="pelevin-3" style="display: none;">путь к Нирване у вас на диване</li>
+                    <li id="pelevin-4" style="display: none;">новый жанр в цинизме, морализаторско-воспитательный</li>
+                </ul>
+            </div>
+            <div class="existential-meter">
+                <span class="meter-label">Уровень отчуждения:</span>
+                <div class="meter-bar"><div style="width: 88%"></div></div>
+            </div>
+        </div>
+
+        <div class="writer-card" id="sorokin">
+            <h2>Владимир Сорокин</h2>
+            <div class="formula">
+                <span class="component" onclick="toggleDesc('sorokin-1')">Провокация</span> + 
+                <span class="component" onclick="toggleDesc('sorokin-2')">Осквернение эстетических чувств</span> + 
+                <span class="component" onclick="toggleDesc('sorokin-3')">Какашки</span> +
+                <span class="component" onclick="toggleDesc('sorokin-4')">Симуляция классики</span>
+            </div>
+            <div class="elements">
+                <ul>
+                    <li id="sorokin-1" style="display: none;">выпинывание читателя из зоны комфорта, даже если он её в глаза не видел</li>
+                    <li id="sorokin-2" style="display: none;">глаза лопаются от некоторых букв автора</li>
+                    <li id="sorokin-3" style="display: none;">физические, ментальные и сакральные</li>
+                    <li id="sorokin-4" style="display: none;">возмутительная, и вы ещё скажете спасибо</li>
+                </ul>
+            </div>
+            <div class="existential-meter">
+                <span class="meter-label">Уровень абсурда:</span>
+                <div class="meter-bar"><div style="width: 96%"></div></div>
+            </div>
+        </div>
+
+        <div class="writer-card" id="ulitskaya">
+            <h2>Людмила Улицкая</h2>
+            <div class="formula">
+                <span class="component" onclick="toggleDesc('ulitskaya-1')">Тяжёлое интеллигентное еврейское детство</span> + 
+                <span class="component" onclick="toggleDesc('ulitskaya-2')">Тяжёлая интеллигентная еврейская зрелость</span> + 
+                <span class="component" onclick="toggleDesc('ulitskaya-3')">Солнечные пылинки и тоска по позднесоветскому уюту</span> +
+                <span class="component" onclick="toggleDesc('ulitskaya-4')">Терапевтический реализм</span>
+            </div>
+            <div class="elements">
+                <ul>
+                    <li id="ulitskaya-1" style="display: none;">иногда даже хочется стать евреем, чтобы было от чего отталкиваться</li>
+                    <li id="ulitskaya-2" style="display: none;">шутка, глубокая общечеловеческая проза в достоверных исторических декорациях</li>
+                    <li id="ulitskaya-3" style="display: none;">лежать, смотреть, читать про чужие жизни и переживать</li>
+                    <li id="ulitskaya-4" style="display: none;">персонажи не гибнут, они мучаются достойно и с пользой для читателя</li>
+                </ul>
+            </div>
+            <div class="existential-meter">
+                <span class="meter-label">Уровень принятия:</span>
+                <div class="meter-bar"><div style="width: 90%"></div></div>
+            </div>
+        </div>
+
+        <div class="total-formula">
+            <h2>Общая формула русской прозы</h2>
+            <div class="final-equation">
+                (Травма × Ирония) ÷ Надежда = ∞
+            </div>
+            <p class="formula-note">Где ∞ — это читатель, который всё равно читает дальше</p>
+        </div>
+
+        <section class="suggest">
+            <h2>Предложить писателя</h2>
+            <p>Какой экзистенциальный компонент мы упустили? Пиши на <a href="mailto:zanaevab@gmail.com">почту</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Qiaohe © 2025</p>
+    </footer>
+
+    <script>
+        function toggleDesc(id) {
+            const desc = document.getElementById(id);
+            const allDescs = document.querySelectorAll('.elements li');
+            
+            allDescs.forEach(d => {
+                if (d.id !== id) d.style.display = 'none';
+            });
+            
+            if (desc.style.display === 'none') {
+                desc.style.display = 'block';
+            } else {
+                desc.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
